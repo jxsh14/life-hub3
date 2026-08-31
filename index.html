@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Schulcockpit</title>
+<meta name="theme-color" content="#12141B">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<div id="app-shell">
+
+  <!-- ===== Sidebar / Mobile Nav ===== -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="mark">SC</div>
+      <div>
+        <div class="name">Schulcockpit</div>
+        <div class="sub">8. Klasse M-Zug</div>
+      </div>
+    </div>
+    <div class="nav-scroll" id="nav-scroll"><!-- injected --></div>
+    <div class="sidebar-foot">
+      <button class="btn ghost sm" style="width:100%" id="theme-toggle">🌙 Dark Mode</button>
+    </div>
+  </nav>
+
+  <!-- ===== Main ===== -->
+  <div id="main">
+    <header class="topbar">
+      <h1 id="topbar-title">Dashboard</h1>
+      <div class="spacer"></div>
+      <div class="search-mini" id="open-search"><span>🔍</span><span>Suchen…</span><kbd>/</kbd></div>
+      <button class="icon-btn" id="open-reminders">🔔<span class="dot" id="reminder-dot" hidden></span></button>
+      <button class="icon-btn" id="quick-focus">🧠</button>
+    </header>
+
+    <main>
+
+      <!-- DASHBOARD -->
+      <section class="view" id="view-dashboard" data-title="Dashboard"></section>
+
+      <!-- SCHULE -->
+      <section class="view" id="view-schule" data-title="Schule"></section>
+      <section class="view" id="view-stundenplan" data-title="Stundenplan"></section>
+      <section class="view" id="view-hausaufgaben" data-title="Hausaufgaben"></section>
+      <section class="view" id="view-klassenarbeiten" data-title="Klassenarbeiten"></section>
+      <section class="view" id="view-noten" data-title="Noten"></section>
+      <section class="view" id="view-rucksack" data-title="Rucksack-Check"></section>
+
+      <!-- MORGENROUTINE -->
+      <section class="view" id="view-morgenroutine" data-title="Morgenroutine"></section>
+
+      <!-- KI -->
+      <section class="view" id="view-ki" data-title="KI"></section>
+
+      <!-- ERNÄHRUNG -->
+      <section class="view" id="view-ernaehrung" data-title="Ernährung"></section>
+
+      <!-- TRAINING -->
+      <section class="view" id="view-training" data-title="Training"></section>
+
+      <!-- KALENDER -->
+      <section class="view" id="view-kalender" data-title="Kalender"></section>
+
+      <!-- NOTIZEN -->
+      <section class="view" id="view-notizen" data-title="Notizen"></section>
+
+      <!-- NACHRICHTEN -->
+      <section class="view" id="view-nachrichten" data-title="Nachrichten"></section>
+
+      <!-- FORTSCHRITT -->
+      <section class="view" id="view-fortschritt" data-title="Fortschritt"></section>
+
+      <!-- FAVORITEN -->
+      <section class="view" id="view-favoriten" data-title="Favoriten"></section>
+
+      <!-- EINSTELLUNGEN -->
+      <section class="view" id="view-einstellungen" data-title="Einstellungen"></section>
+
+    </main>
+  </div>
+</div>
+
+<button class="fab" id="fab-focus" title="Fokusmodus">🧠</button>
+
+<div id="toast-stack"></div>
+
+<div id="reminder-banner" hidden>
+  <span id="reminder-banner-text"></span>
+  <button class="btn sm ghost" id="reminder-banner-dismiss">✕</button>
+</div>
+
+<!-- Generic modal -->
+<div class="modal-backdrop" id="modal-backdrop" hidden>
+  <div class="modal" id="modal-box"></div>
+</div>
+
+<!-- Focus overlay -->
+<div id="focus-overlay" hidden>
+  <div class="faint" id="focus-label">FOKUSZEIT</div>
+  <div class="focus-clock" id="focus-clock">25:00</div>
+  <div class="btn-row">
+    <button class="btn" id="focus-pause">⏸ Pause</button>
+    <button class="btn danger" id="focus-stop">⏹ Beenden</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+<script src="js/db.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/reminders.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/schule.js"></script>
+<script src="js/views/morgenroutine.js"></script>
+<script src="js/views/ki.js"></script>
+<script src="js/views/ernaehrung.js"></script>
+<script src="js/views/training.js"></script>
+<script src="js/views/kalender.js"></script>
+<script src="js/views/notizen.js"></script>
+<script src="js/views/nachrichten.js"></script>
+<script src="js/views/fortschritt.js"></script>
+<script src="js/views/einstellungen.js"></script>
+<script src="js/search.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
